@@ -1,0 +1,20 @@
+modules = ["nodejs-20", "postgresql-16"]
+run = "npm start"
+entrypoint = "server/index.js"
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+NODE_ENV = "development"
+APP_TIMEZONE = "Europe/Rome"
+DEFAULT_TENANT = "turnover"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["npm", "install", "--omit=dev"]
+run = ["node", "server/index.js"]

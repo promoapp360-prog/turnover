@@ -1,0 +1,19 @@
+{
+  "name": "promoapp-salon-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PromoApp Salon Suite – sito, prenotazioni online e gestionale per saloni (Turn Over by Zaira)",
+  "main": "server/index.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node server/seed.js",
+    "seed:demo": "node server/seed-demo.js",
+    "test": "node --test test/*.test.js",
+    "backup": "node scripts/backup.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}
